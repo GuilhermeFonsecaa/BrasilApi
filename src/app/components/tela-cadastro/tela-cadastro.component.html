@@ -1,1 +1,27 @@
-<p>tela-cadastro works!</p>
+<div class="container">
+    <h1>Cadastro Banco:</h1>
+
+    <div *ngIf="selectedBank">
+        <h3>Detalhes do Banco Pesquisado:</h3>
+        <p>IPSB: {{ selectedBank.ispb }}</p>
+        <p>Código: {{ selectedBank.code }}</p>
+        <p>Nome: {{ selectedBank.fullName }}</p>
+    </div>
+    <hr>
+
+    <div class="cadastro">
+        <h2>Cadastro de Conta</h2>
+        <div class="form-group">
+            <label for="agencia">Agência</label>
+            <input type="text" id="agencia" name="agencia" [(ngModel)]="agencia" required>
+        </div>
+        <div class="form-group">
+            <label for="conta">Conta Bancária</label>
+            <input type="text" id="conta" name="conta" [(ngModel)]="conta" required>
+        </div>
+        <button (click)="cadastroConta()">Cadastrar Conta</button>
+        <div class="erro-mensagem" *ngIf="erroCadastro">
+            <p>Preencha todos os campos antes de cadastrar.</p>
+        </div>
+    </div>
+</div>
