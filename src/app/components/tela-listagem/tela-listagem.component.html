@@ -1,1 +1,29 @@
-<p>tela-listagem works!</p>
+<div class="container">
+    <div class="listaBancos">
+        <h1>Lista de Bancos</h1>
+        <label for="bankCodeInput">Código do Banco:</label>
+        <input type="text" id="bankCodeInput" [(ngModel)]="bankCode">
+        <button (click)="getBankCode()">Pesquisar</button>
+        <button (click)="getBank()">Listar todos os bancos</button>
+    </div>
+
+
+    <div class="detalhesPesquisa" *ngIf="selectedBank">
+        <h1>Detalhes do Banco Pesquisado:</h1>
+        <p>IPSB: {{ selectedBank.ispb }}</p>
+        <p>Código: {{ selectedBank.code }}</p>
+        <p>Nome: {{ selectedBank.fullName }}</p>
+        <button (click)="registrationRoute(selectedBank.code)">Acessar Banco</button>
+    </div>
+
+    <div class="detalhesBancos" *ngIf="!selectedBank && banks.length>0">
+        <ul *ngFor="let banco of banks">
+            <li *ngIf="banco.code">
+                <p>IPSB: {{ banco.ispb }}</p>
+                <p>Código: {{ banco.code }}</p>
+                <p>Nome: {{ banco.fullName }}</p>
+                <button (click)=registrationRoute(banco.code)>Acessar Banco</button>
+            </li>
+        </ul>
+    </div>
+</div>
