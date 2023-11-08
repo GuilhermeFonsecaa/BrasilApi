@@ -9,7 +9,7 @@ import { TelaCadastroComponent } from './components/tela-cadastro/tela-cadastro.
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
   { path: 'lista', component: TelaListagemComponent },
-  { path: 'cadastro', component: TelaCadastroComponent },
+  { path: 'cadastro/:bankCode', component: TelaCadastroComponent },
 ];
 
 @NgModule({
