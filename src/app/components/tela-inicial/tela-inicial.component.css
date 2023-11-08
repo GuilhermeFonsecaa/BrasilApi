@@ -1,0 +1,42 @@
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+ul {
+    list-style-type: none;
+padding-left: 0 
+  }
+  
+li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+p {
+    margin: 0;
+  }
+  
+.no-accounts {
+    font-weight: bold;
+    color: red;
+  }
+  
