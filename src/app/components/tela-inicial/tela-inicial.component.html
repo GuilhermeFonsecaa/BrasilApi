@@ -1,1 +1,19 @@
-<p>tela-inicial works!</p>
+<div class="container">
+    <button class="btn" routerLink="/lista">Cadastrar Conta</button>
+    <h1>Contas Cadastradas:</h1>
+    <div *ngIf="contasBancarias.length > 0; else noAccounts">
+        <ul>
+            <li *ngFor="let conta of contasBancarias" >
+                <p>Código Banco: {{conta.bankCode}}</p>
+                <p>Agência: {{conta.agencia}}</p>
+                <p>Conta: {{conta.conta}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-template #noAccounts>
+    <p><strong>Não existe nenhuma conta cadastrada.</strong></p>
+</ng-template>
+
+
